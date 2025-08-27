@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -68,10 +69,10 @@
                                         <td><?php echo $row['title']; ?></td>
                                         <td><?php echo $row['description']; ?></td>
                                         <td><?php echo $row['created_at']; ?></td>
-                                        <td><a href="#" class="btn btn-secondary">
+                                        <td><a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-secondary">
                                                 <i class="fas fa-marker"></i>
                                             </a>
-                                            <a href="delete.php?id=<?=$row['id']; ?>" class="btn btn-danger">
+                                            <a href="delete.php?id=<?= $row['id']; ?>" class="btn btn-danger">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
                                         </td>
