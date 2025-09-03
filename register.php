@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-4"> 
                 <div class="card card-body mt-5">
                     <h3 class="text-center">Cadastro</h3>
                     <form action="register_logic.php" method="POST">

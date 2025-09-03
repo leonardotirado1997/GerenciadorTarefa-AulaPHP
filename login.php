@@ -25,7 +25,7 @@
                             <input type="password" name="password" id="password" class="form-control"
                                 placeholder="********" required>
                         </div>
-                        <button type="submit" class="btn btn-success btn-block">Entrar</button>
+                         <button type="submit" class="btn btn-success btn-block">Entrar</button>
                     </form>
                     <div class="text-center mt-3">
                         <a href="register.php" class="text-secondary">Cadastre-se</a>
