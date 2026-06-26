@@ -1,0 +1,21 @@
+CREATE DATABASE task_manager;
+
+USE task_manager;
+
+CREATE TABLE IF NOT EXISTS users (
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     email VARCHAR(255) NOT NULL UNIQUE,
+     password VARCHAR(255) NOT NULL,
+     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+     );
+CREATE TABLE IF NOT EXISTS tasks (
+     id INT NOT NULL AUTO_INCREMENT,
+     title VARCHAR(45) NULL,
+     description VARCHAR(150) NULL,
+     created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+     PRIMARY KEY (id));
+CREATE TABLE IF NOT EXISTS leads (
+     lead_id int not null AUTO_INCREMENT PRIMARY KEY,
+     lead_name VARCHAR(100) NOT NULL,
+     lead_email VARCHAR(100) NOT NULL UNIQUE
+);

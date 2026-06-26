@@ -16,7 +16,7 @@ try {
         $description = isset($_POST['description']) ? $_POST['description'] : null;
 
         if ($id && $title !== null) {
-            $sql = "UPDATE crud_php SET title = ?, description = ? WHERE id = ?";
+            $sql = "UPDATE tasks SET title = ?, description = ? WHERE id = ?";
             $stmt = $conn->prepare($sql);
 
             if ($stmt) {
@@ -25,7 +25,7 @@ try {
                 if ($stmt->execute()) {
                     $_SESSION['message'] = "Tarefa atualizada com sucesso!";
                     $_SESSION['message_type'] = 'primary';
-                    header("Location: index.php");
+                    header("Location: painel.php");
                     exit();
                 } else {
                     $_SESSION['message'] = "Erro ao atulizar a tarefa.";
@@ -45,7 +45,7 @@ try {
 } catch (Exception $e) {
     $_SESSION['message'] = "Erro: " . $e->getMessage();
     $_SESSION['message_type'] = "danger";
-    header("Location: index.php");
+    header("Location: painel.php");
     exit();
 } finally {
     $conn->close();

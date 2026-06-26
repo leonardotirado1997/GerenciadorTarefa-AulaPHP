@@ -15,7 +15,7 @@ try {
 
 
     if ($title) {
-        $sql = "INSERT INTO crud_php (title, description) VALUES (?,?)";
+        $sql = "INSERT INTO tasks (title, description) VALUES (?,?)";
         $stmt = $conn->prepare($sql);
 
         if($stmt) {
@@ -25,7 +25,7 @@ try {
                 session_start();
                 $_SESSION['message'] = "Tarefa salva com sucesso!";
                 $_SESSION['message_type'] = "success";
-                header("Location: index.php");
+                header("Location: painel.php");
                 exit();
             } else {
                 session_start();

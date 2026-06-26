@@ -1,23 +1,13 @@
 <?php
 
-$servername = "localhost:3306";
+$servername = "localhost";
 $username = "root";
-$password = "root";
-$dbname = "tasks";
+$password = "1234";
+$dbname = "task_manager";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Conexão falhou " . $conn->connect_error);
-}
+if (!$conn) {
 
-$sql = "CREATE TABLE IF NOT EXISTS users (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        email VARCHAR(255) NOT NULL UNIQUE,
-        password VARCHAR(255) NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )";
-
-if ($conn->query($sql) === FALSE) {
-    echo "Erro ao criar tabela: " . $conn->error;
+    die("Erro na conexão!");
 }

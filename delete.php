@@ -12,7 +12,7 @@ try {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        $sql = "DELETE FROM crud_php WHERE id = ?";
+        $sql = "DELETE FROM tasks WHERE id = ?";
         $stmt = $conn->prepare($sql);
 
         if ($stmt) {
@@ -22,7 +22,7 @@ try {
                 $_SESSION['message'] = 'Tarefa excluída com sucesso!.';
                 $_SESSION['message_type'] = 'success';
 
-                header("Location: index.php");
+                header("Location: painel.php");
                 exit();
             } else {
                 session_start();
