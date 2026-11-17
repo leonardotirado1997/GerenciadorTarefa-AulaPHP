@@ -65,47 +65,47 @@ if (!isset($_SESSION['user_id'])) {
                 <!-- Tabela de Tarefas -->
                 <div class="col-12 col-lg-8">
                     <div class="table-responsive">
-                    <table class="table table-bordered align-middle">
-                        <thead>
-                            <tr>
-                                <th>Cód</th>
-                                <th>Título</th>
-                                <th>Descrição</th>
-                                <th>Criado em</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            require_once 'conn.php';
+                        <table class="table table-bordered align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Cód</th>
+                                    <th>Título</th>
+                                    <th>Descrição</th>
+                                    <th>Criado em</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                require_once 'conn.php';
 
-                            $query = "SELECT id, title, description, created_at 
+                                $query = "SELECT id, title, description, created_at 
                             FROM tasks";
-                            $result = $conn->query($query);
+                                $result = $conn->query($query);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                            ?>
-                                    <tr>
-                                        <td><?php echo $row['id']; ?></td>
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $row['id']; ?></td>
                     </div>
-                                        <td><?php echo $row['title']; ?></td>
-                                        <td><?= substr($row['description'], 0, 20) . '...' ?></td>
-                                        <td><?= date("d/m/Y", strtotime($row['created_at'])); ?></td>
-                                        <td><a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-secondary">
-                                                <i class="fas fa-marker"></i>
-                                            </a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6R3kK2u6G5bNf2rYf7S7yB2Jm9JwHf1wYf5v5V5Q2t1QX6f5q3j5Y5p4YfQ2k0v" crossorigin="anonymous"></script>
-                                    </tr>
-                            <?php
+                    <td><?php echo $row['title']; ?></td>
+                    <td><?= substr($row['description'], 0, 20) . '...' ?></td>
+                    <td><?= date("d/m/Y", strtotime($row['created_at'])); ?></td>
+                    <td><a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-secondary">
+                            <i class="fas fa-marker"></i>
+                        </a>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6R3kK2u6G5bNf2rYf7S7yB2Jm9JwHf1wYf5v5V5Q2t1QX6f5q3j5Y5p4YfQ2k0v" crossorigin="anonymous"></script>
+                        </tr>
+                <?php
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='5'>Nenhuma tarefa encontrada!</td></tr>";
                                 }
-                            } else {
-                                echo "<tr><td colspan='5'>Nenhuma tarefa encontrada!</td></tr>";
-                            }
-                            $conn->close();
-                            ?>
-                        </tbody>
-                    </table>
+                                $conn->close();
+                ?>
+                </tbody>
+                </table>
                 </div>
                 <!-- /Tabela de Tarefas -->
             </div>

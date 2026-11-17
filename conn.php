@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "1234";
+$password = "root";
 $dbname = "task_manager";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);

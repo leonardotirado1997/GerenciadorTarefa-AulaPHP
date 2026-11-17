@@ -32,7 +32,7 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h1 class="display-4 fw-bold text-dark">Gerencie seus projetos sem complicação</h1>
                     <p class="lead text-secondary my-4">Uma forma visual e intuitiva de organizar suas tarefas cotidianas, priorizar entregas e ter controle total sobre o seu tempo. Estilo Kanban, simples e direto ao ponto.</p>
-                    
+
                     <!-- Formulário de Captura de Lead -->
                     <div class="card card-body shadow-sm border-0 bg-light">
                         <form action="capture_lead.php" method="POST">
@@ -53,7 +53,7 @@
                         <i class="fas fa-shield-alt me-1"></i> Não enviamos spam. Seus dados estão seguros.
                     </small>
                 </div>
-                
+
                 <!-- Ilustração/Mockup do Painel -->
                 <div class="col-lg-6 text-center">
                     <div class="p-3 bg-light rounded shadow-sm border">
